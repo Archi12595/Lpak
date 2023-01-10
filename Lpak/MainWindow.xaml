@@ -1,0 +1,34 @@
+﻿<Window x:Name="GL_Windows" x:Class="Lpak.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lpak"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="655" Width="1205" Activated="GL_Windows_Activated">
+    <Grid RenderTransformOrigin="0.491,0.49" Margin="0,0,0,7" HorizontalAlignment="Left" Width="1195">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="134,0,0,2" TextWrapping="Wrap" Text="TextBox" Width="798" Height="150" VerticalAlignment="Bottom" IsReadOnly="True"/>
+        <Button x:Name="button1" Content="Создать" HorizontalAlignment="Left" Margin="956,491,0,0" VerticalAlignment="Top" Height="22" Width="106" Click="button1_Click"/>
+        <Button x:Name="button2" Content="Изменить" HorizontalAlignment="Left" Margin="956,527,0,0" VerticalAlignment="Top" Height="27" Width="106" Click="button2_Click"/>
+        <Button x:Name="button3" Content="Удалить" HorizontalAlignment="Left" Margin="956,571,0,0" VerticalAlignment="Top" Width="106" Height="28" Click="button3_Click"/>
+        <TabControl Margin="0,0,0,157" >
+            <TabItem x:Name="tabltem1" Header="Клиенты" MouseUp="tabltem1_MouseUp">
+                <Grid Background="#FFE5E5E5" Margin="9,0,0,0" HorizontalAlignment="Left" Width="1183">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="data1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="-5,1,591,-1" Loaded="data1_Loaded" MouseUp="data1_MouseUp" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True"/>
+                    <DataGrid x:Name="data2" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="592,1,0,-2" Loaded="Data2_Loaded" HorizontalAlignment="Left" Width="591" IsReadOnly="True" MouseUp="data2_MouseUp"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tabltem2" Header="Заявки" MouseUp="tabltem2_MouseUp">
+                <DataGrid x:Name="data3" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,546,0" CanUserAddRows="False" CanUserDeleteRows="False"/>
+            </TabItem>
+        </TabControl>
+        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="681,40,0,0" VerticalAlignment="Top" Width="191" DropDownOpened="comboBox1_DropDownOpened" DropDownClosed="comboBox1_DropDownClosed"/>
+        <Label x:Name="label1" Content="ПРИМЕЧАНИЕ" HorizontalAlignment="Left" Margin="10,528,0,0" VerticalAlignment="Top" Width="119" Height="57"/>
+    </Grid>
+</Window>
