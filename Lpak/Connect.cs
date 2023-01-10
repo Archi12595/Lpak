@@ -110,7 +110,7 @@ namespace Connect
                 }
                 m_dbConn.Close();
             }
-            SQLiteConnection shif = new SQLiteConnection("Data Source=Test.db;Version=3;");
+            SQLiteConnection shif = new SQLiteConnection("Data Source="+ Conf[0] + ";Version="+ Conf[1] + ";");
             var command = shif.CreateCommand();
             shif.Open();
             command.CommandText = "SELECT quote($newPassword);";
